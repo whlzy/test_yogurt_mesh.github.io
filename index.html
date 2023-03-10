@@ -40,6 +40,7 @@
     import * as THREE from 'https://cdn.skypack.dev/three@0.132.2/build/three.module.js';
     import { MTLLoader } from 'https://cdn.skypack.dev/three@0.132.2/examples/jsm/loaders/MTLLoader.js';
     import { OBJLoader } from 'https://cdn.skypack.dev/three@0.132.2/examples/jsm/loaders/OBJLoader.js';
+    import { PLYLoader } from 'https://cdn.skypack.dev/three@0.132.2/examples/jsm/loaders/PLYLoader.js';
     // 创建场景
     var scene = new THREE.Scene();
 
@@ -57,7 +58,7 @@
 
     var mtlLoader = new MTLLoader();
     var objLoader = new OBJLoader();
-    var plyloader = new THREE.PLYLoader();
+    var plyloader = new PLYLoader();
     // C:/Users/LENOVO/Desktop/mesh/textured.mtl
     // C:/Users/LENOVO/Desktop/mesh/a.obj
     // 加载材质和OBJ模型并添加到场景中
