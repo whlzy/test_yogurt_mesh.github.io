@@ -69,7 +69,7 @@
     //     scene.add(object);
     //   });
     // });
-    Loader.load('./textured.ply', function (geometry) {
+    plyloader.load('./textured.ply', function (geometry) {
       var material = new THREE.MeshNormalMaterial();
       var mesh = new THREE.Mesh(geometry, material);
       scene.add(mesh);
