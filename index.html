@@ -70,7 +70,7 @@
     //   });
     // });
     plyloader.load('./textured.ply', function (geometry) {
-      var material = new THREE.MeshNormalMaterial();
+      var material = new THREE.MeshPhongMaterial({ color: 0xffffff });
       var mesh = new THREE.Mesh(geometry, material);
       scene.add(mesh);
     });
