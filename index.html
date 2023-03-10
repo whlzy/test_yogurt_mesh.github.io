@@ -57,13 +57,14 @@
 
     var mtlLoader = new MTLLoader();
     var objLoader = new OBJLoader();
+    var plyloader = new THREE.PLYLoader();
     // C:/Users/LENOVO/Desktop/mesh/textured.mtl
     // C:/Users/LENOVO/Desktop/mesh/a.obj
     // 加载材质和OBJ模型并添加到场景中
     mtlLoader.load('./textured.mtl', function (materials) {
       materials.preload();
-      objLoader.setMaterials(materials);
-      objLoader.load('./a.obj', function (object) {
+      plyloader.setMaterials(materials);
+      plyloader.load('./textured.ply', function (object) {
         scene.add(object);
       });
     });
