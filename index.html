@@ -40,7 +40,6 @@
     import * as THREE from 'https://cdn.skypack.dev/three@0.132.2/build/three.module.js';
     import { MTLLoader } from 'https://cdn.skypack.dev/three@0.132.2/examples/jsm/loaders/MTLLoader.js';
     import { OBJLoader } from 'https://cdn.skypack.dev/three@0.132.2/examples/jsm/loaders/OBJLoader.js';
-    import { PLYLoader } from 'https://cdn.skypack.dev/three@0.132.2/examples/jsm/loaders/PLYLoader.js';
     // 创建场景
     var scene = new THREE.Scene();
 
@@ -58,21 +57,15 @@
 
     var mtlLoader = new MTLLoader();
     var objLoader = new OBJLoader();
-    var plyloader = new PLYLoader();
     // C:/Users/LENOVO/Desktop/mesh/textured.mtl
     // C:/Users/LENOVO/Desktop/mesh/a.obj
     // 加载材质和OBJ模型并添加到场景中
-    // mtlLoader.load('./textured.mtl', function (materials) {
-    //   materials.preload();
-    //   plyloader.setMaterials(materials);
-    //   plyloader.load('./textured.ply', function (object) {
-    //     scene.add(object);
-    //   });
-    // });
-    plyloader.load('./textured.ply', function (geometry) {
-      var material = new THREE.MeshPhongMaterial({ color: 0xffffff });
-      var mesh = new THREE.Mesh(geometry, material);
-      scene.add(mesh);
+    mtlLoader.load('./textured.mtl', function (materials) {
+      materials.preload();
+      objLoader.setMaterials(materials);
+      objLoader.load('./a.obj', function (object) {
+        scene.add(object);
+      });
     });
     // objLoader.load('./a.obj', function (object) {
     //   scene.add(object);
